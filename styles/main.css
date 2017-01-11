@@ -1,0 +1,142 @@
+body {
+    font-family: Helvetica Neue;
+    font-weight: lighter;
+}
+.row {
+    height: 50%;
+    width: 100%;
+    
+    display:flex;
+    flex-direction: column;
+}
+.top{
+    position: absolute;
+    left: 0;
+    top: 0;
+   
+}
+.bottom {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    color: white;
+    
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.buttons li,h1 {
+    list-style: none;
+    padding-left: .5em;
+    padding-right: .5em;
+    margin: 0;
+}
+
+.tabs {
+    margin-top: auto;
+    align-self: center;
+    padding-left: 7em;
+}
+
+.tabs li {
+    transition: all .25s;
+}
+
+.tabs li:hover {
+/*    font-size: 2em;*/
+    margin-bottom: .25em;
+}
+
+.on {
+    font-size: 2em;
+}
+
+
+/*
+.tabs li:after {
+    
+    display: block;
+    content: '';
+    height: 0px;
+    width: 0;
+    border-bottom: 0 solid;
+    transition: ease-in-out .18s;
+}
+
+
+.tabs li:hover:after {
+    width: 100%;
+    /*    height: 2px;
+    border-bottom: .01em solid;
+    transition: all ease-in-out .18s;
+}
+*/
+
+.links {
+    align-self: center;
+    padding-right: 7em;
+}
+
+.top-panel {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.bottom-panel {
+    height: 50%;
+    width: 100%;
+    
+    position: absolute;
+    top: 50%;
+    left: 0;
+    color: white;
+    
+    background-color: black;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.panel {
+    text-align: center;
+    width: 20em;
+}
+
+.panel.upper {
+    margin-left: 2.5em;
+}
+
+.panel.lower {
+    margin-left: auto;
+    margin-right: 2.5em;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: lighter;
+}
+
+h6 {
+    font-size: .2em;
+}
+
+@media screen and (max-width: 736px) {
+    
+    html {
+        font-size: 3vmin;
+        /* Base font-size of 32px */ 
+    }
+}
+
+
+
