@@ -31,7 +31,7 @@ body {
     pointer-events: auto;
 }
 
-.buttons li,h1 {
+.buttons a,h1 {
     list-style: none;
     padding-left: .5em;
     padding-right: .5em;
@@ -44,23 +44,31 @@ body {
     padding-left: 7em;
 }
 
-.tabs li {
+.tabs a {
+    color: black;
     transition: all .25s;
 }
 
-.tabs li:hover {
+.tabs a:hover {
     opacity: .5;
 }
 
-.links li {
+.links a {
+    color: white;
+    padding-left: .5em;
+    padding-right: .5em;
     transition: all .25s;
 }
-.links li:hover {
+.links a:hover {
     opacity: .5;
 }
 
 .on {
     font-size: 2em;
+}
+
+a {
+    text-decoration: none;
 }
 
 .resume {
@@ -71,11 +79,11 @@ body {
 }
 
 .resume:hover {
-    font-weight: normal;
+    font-weight: 300;
 }
 
 .prism {
-    font-weight: lighter;
+    font-weight: 300;
     text-decoration: none;
     font-size: 2.5em;
 }
@@ -161,6 +169,39 @@ h6 {
     font-size: .2em;
 }
 
+.picture {
+    width: 20em;
+    height: 12em;
+}
+
+
+
+#slider {
+    width: 20em;
+    height: auto;
+    overflow: hidden;
+    transition: all .25s;
+}
+
+#slider:hover {
+    opacity: .75;
+}
+
+#slider .slides {
+    display: block;
+    width: 120em;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#slider .slide {
+    float: left;
+    list-style-type: none;
+    width: 20em;
+    height: auto;
+}
+
 @media screen and (max-width: 736px) {
     
     html {
@@ -176,6 +217,8 @@ h6 {
         /* Base font-size of 32px */ 
     }
 }
+
+
 
 
 

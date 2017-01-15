@@ -2,6 +2,7 @@ $(".main").onepage_scroll({
     sectionContainer: "div.page",
     easing: "none",
     pagination: false,
+    updateURL: true,
     loop: false,
     direction: "horizontal",
     beforeMove: inflate
@@ -12,12 +13,49 @@ $(function () {
     $('#info-button').on('click', movePage(2));
     $('#work-button').on('click', movePage(3));
     $('#contact-button').on('click', movePage(4));
-    
+
     $('.prism').on('mouseenter', prismColorChange);
-    $('.prism').on('mouseleave', prismReset)
+    $('.prism').on('mouseleave', prismReset);
+
+
+    //settings for slider
+    var width = 20;
+    var animationSpeed = 1000;
+    var pause = 3000;
+    var currentSlide = 1;
+
+    //cache DOM elements
+    var $slider = $('#slider');
+    var $slideContainer = $('.slides', $slider);
+    var $slides = $('.slide', $slider);
+
+    var interval;
+
+    function startSlider() {
+        interval = setInterval(function () {
+            $slideContainer.animate({
+                'margin-left': '-=' + width + 'em'
+            }, animationSpeed, function () {
+                if (++currentSlide === $slides.length) {
+                    currentSlide = 1;
+                    $slideContainer.css('margin-left', 0);
+                }
+            });
+        }, pause);
+    }
+
+    function pauseSlider() {
+        clearInterval(interval);
+    }
+
+//    $slideContainer
+//        .on('mouseenter', pauseSlider)
+//        .on('mouseleave', startSlider);
+
+    startSlider();
 });
 
-function prismColorChange(){
+function prismColorChange() {
     $('.P').addClass('p-hover');
     $('.R').addClass('r-hover');
     $('.I').addClass('i-hover');
@@ -25,7 +63,7 @@ function prismColorChange(){
     $('.M').addClass('m-hover');
 }
 
-function prismReset(){
+function prismReset() {
     $('.P').removeClass('p-hover');
     $('.R').removeClass('r-hover');
     $('.I').removeClass('i-hover');
@@ -60,6 +98,8 @@ function inflate(index) {
 function movePage(index) {
     return function () {
         if ($(this).hasClass("on")) {
+            $(this).removeClass('on');
+            $(".main").moveTo(1);
             return;
         } else {
             $('.on').removeClass('on');
