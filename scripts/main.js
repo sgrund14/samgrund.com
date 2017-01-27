@@ -18,8 +18,9 @@ $(function () {
     $('.prism').on('mouseleave', prismReset);
 
 
+    // creds to learncode.academy for this basic image slider 
     //settings for slider
-    var width = 20;
+    var width = 25;
     var animationSpeed = 1000;
     var pause = 3000;
     var currentSlide = 1;
@@ -47,11 +48,9 @@ $(function () {
     function pauseSlider() {
         clearInterval(interval);
     }
-
-//    $slideContainer
-//        .on('mouseenter', pauseSlider)
-//        .on('mouseleave', startSlider);
-
+    //    $slideContainer
+    //        .on('mouseenter', pauseSlider)
+    //        .on('mouseleave', startSlider);
     startSlider();
 });
 
@@ -77,18 +76,30 @@ function inflate(index) {
     switch (index) {
         case 1:
             $currentPage.removeClass('on');
+
+            $('.tabs').removeClass("selected");
+            $('.links').removeClass("selected");
             break;
         case 2:
             $currentPage.removeClass('on');
             $('#info-button').addClass("on");
+
+            $('.tabs').removeClass("selected");
+            $('.links').removeClass("selected");
             break;
         case 3:
             $currentPage.removeClass('on');
             $('#work-button').addClass("on");
+
+            $('.tabs').addClass("selected");
+            $('.links').addClass("selected");
             break;
         case 4:
             $currentPage.removeClass('on');
             $('#contact-button').addClass("on");
+
+            $('.tabs').removeClass("selected");
+            $('.links').removeClass("selected");
             break;
         default:
             break;
