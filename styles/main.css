@@ -233,11 +233,14 @@ h6 {
     }
     .info,
     .contact,
-    #first-name,
-    #last-name,
     .tabs,
     .links {
         font-weight: 400;
+    }
+    #first-name,
+    #last-name,
+    {
+        font-weight: 300;
     }
     .tabs {
         margin-top: auto;
@@ -248,5 +251,11 @@ h6 {
     html {
         font-size: 2.5vmin;
         /* Base font-size of 32px */
+    }
+    .info,
+    .contact,
+    .tabs,
+    .links {
+        font-weight: 400;
     }
 }
