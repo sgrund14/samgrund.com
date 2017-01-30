@@ -50,9 +50,9 @@ window.onload = function () {
                 placedSymbol.setPosition(center);
 
                 if (id === 0) {
-                    placedSymbol.scale(4 * i / count);
+                    placedSymbol.scale(paper.view.size.width / 300 * i / count);
                 } else {
-                    placedSymbol.scale(2 * i / count);
+                    placedSymbol.scale(paper.view.size.width / 600 * i / count);
                 }
             }
         }
