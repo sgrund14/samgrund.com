@@ -2,7 +2,7 @@ $(".main").onepage_scroll({
     sectionContainer: "div.page",
     easing: "none",
     pagination: false,
-    updateURL: true,
+    updateURL: false,
     loop: false,
     direction: "horizontal",
     beforeMove: inflate
