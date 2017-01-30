@@ -2,12 +2,12 @@ window.onload = function () {
     var mypapers = [];
     var colors = {
         yellow: 'yellow',
-        darkblue: '#00296b',
-        darkgreen: '#016b00',
-        lightgrey: '#e0e0e0',
-        lightblue: 'lightblue',
+        darkblue: '#000251',
+        lightgreen: '#93ff99',
+        lightergrey: '#eaeaea',
+        lightblue: '#e5e6ff',
         darkred: '#6b0000',
-        darkgrey: '#161616',
+        darkgrey: '#3a3a3a',
         lightgrey: 'lightgrey'
     };
 
@@ -73,7 +73,7 @@ window.onload = function () {
             var steps = duration / interval;
             var step_u = 1.0 / steps;
             var u = 0.0;
-            speed = .1;
+            speed = .05;
             var theInterval = setInterval(function () {
                 if (u >= 1.0) {
                     speed = 8;
@@ -100,34 +100,21 @@ window.onload = function () {
                     if (id === 0) {
                         item.position.x += Math.sin(item.bounds.width) / speed;
                         item.position.y += Math.cos(item.bounds.height) / speed;
-                        if (item.bounds.left > mypapers[id].view.size.width) {
-                            item.position.x = -item.bounds.width;
-                        }
-                        if (item.bounds.top > mypapers[id].view.size.height) {
-                            item.position.y = -item.bounds.height;
-                        }
-
-
-
                     } else {
                         item.position.x -= Math.sin(item.bounds.width) / speed;
                         item.position.y -= Math.cos(item.bounds.height) / speed;
-                        if (item.bounds.right < 0) {
-                            item.position.x = mypapers[id].view.bounds.width + item.bounds.width;
-                        }
-                        if (item.bounds.bottom < 0) {
-                            item.position.y = mypapers[id].view.bounds.height + item.bounds.height;
-                        }
                     }
-
-
+                    if (item.bounds.left > mypapers[id].view.size.width) {
+                        item.position.x -= mypapers[id].view.size.width + item.bounds.width
+                    } else if (item.bounds.top > mypapers[id].view.size.height) {
+                        item.position.y -= mypapers[id].view.size.height + item.bounds.height;
+                    } else if (item.bounds.right < 0) {
+                        item.position.x += mypapers[id].view.size.width + item.bounds.width;
+                    } else if (item.bounds.bottom < 0) {
+                        item.position.y += mypapers[id].view.size.height + item.bounds.height;
+                    }
                 }
             }
-        }
-
-        function checkBounds(item, id) {
-
-
         }
 
         return {
@@ -147,13 +134,13 @@ window.onload = function () {
 
     var observer = new MutationObserver(function (mutations) {
         if ($('#info-button').hasClass('on')) {
-            topAnim.colorChange(colors.darkblue);
-            bottomAnim.colorChange(colors.lightblue);
+            topAnim.colorChange(colors.lightblue);
+            bottomAnim.colorChange(colors.darkblue);
         } else if ($('#work-button').hasClass('on')) {
-            topAnim.colorChange(colors.darkgreen);
+            topAnim.colorChange(colors.lightgreen);
             bottomAnim.colorChange(colors.darkred);
         } else if ($('#contact-button').hasClass('on')) {
-            topAnim.colorChange(colors.lightgrey);
+            topAnim.colorChange(colors.lightergrey);
             bottomAnim.colorChange(colors.darkgrey);
         } else {
             topAnim.colorChange(colors.yellow);
