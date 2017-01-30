@@ -220,6 +220,7 @@ h6 {
 @media screen and (max-width: 480px) {
     html {
         font-size: 2.5vmin;
+        font-weight: 400;
         /* Base font-size of 32px */
     }
     .panel {
