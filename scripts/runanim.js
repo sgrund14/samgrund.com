@@ -69,7 +69,10 @@ window.onload = function () {
             fade(path.fillColor, color, 125);
         }
 
+
         // helper function for smooth color transition
+        // lerp and fade functions adapted from: 
+        // http://stackoverflow.com/questions/11292649/javascript-color-animation
         function lerp(val1, val2, rate) {
             return (1 - rate) * val1 + rate * val2;
         };
