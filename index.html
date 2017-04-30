@@ -1,12 +1,17 @@
 <!doctype html>
-<html>
+<html ng-app="myApp" class="no-js">
 
 <head>
-    <title>Sam Grund.com</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <title>Sam Grund</title>
+    <link rel="stylesheet" href="../bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="../bower_components/html5-boilerplate/dist/css/main.css">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/onepage-scroll.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <script src="../bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
@@ -16,79 +21,15 @@
     <canvas resize="true" id="canvas"></canvas>
     <canvas resize="true" id="canvas2"></canvas>
 
-    <div class="main">
-        <div class="page">
-            <div class="top-panel"></div>
-            <div class="bottom-panel"></div>
-        </div>
-        <div class="page">
-            <div class="top-panel">
-                <div class="panel upper info">
-                    Samuel Grund is a third year college student at Oberlin College pursuing a bachelor's degree in Computer Science. He's new to web development, but is getting more savvy with each passing day.
-                </div>
-            </div>
-            <div class="bottom-panel">
-                <div class="panel lower info">
-                    In the past, he's tried his hand in game development, creating programmatic art, and providing excellent wait service at nice restaurants. Today, he enjoys basketball, cooking, reading, and coding. He would love an internship.
-                </div>
-            </div>
-        </div>
-        <div class="page">
-            <div class="top-panel">
-                <div class="panel upper work">
-                    <div class="rounded"></div>
-                    <a href="https://www.behance.net/sgrund" target="_blank">
-                        <div id="slider">
-                            <ul class="slides">
-                                <li class="slide slide1"><img class="picture" src="images/frame-0029.png" /></li>
-                                <li class="slide slide2"><img class="picture" src="images/frame-0155.png" /></li>
-                                <li class="slide slide3"><img class="picture" src="images/frame-0201.png" /></li>
-                                <li class="slide slide4"><img class="picture" src="images/frame-0228.png" /></li>
-                                <li class="slide slide5"><img class="picture" src="images/frame-0297.png" /></li>
-                                <li class="slide slide6"><img class="picture" src="images/frame-0029.png" /></li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="bottom-panel">
-                <div class="panel lower work">
-                    <a href="http://cs-361-project.github.io/prism-game/" class="prism" target="_blank">
-                        <span class="letter P" style="color: red">p</span>
-                        <span class="letter R" style="color: cyan">r</span>
-                        <span class="letter I" style="color: green">i</span>
-                        <span class="letter S" style="color: magenta">s</span>
-                        <span class="letter M" style="color: blue">m</span>
-                    </a>
 
-                </div>
-            </div>
-        </div>
-        <div class="page">
-            <div class="top-panel">
-                <div class="panel upper contact">
-                    <h2>email</h2>
-                    sgrund@oberlin.edu
-                    <br>
-                    <h2>twitter</h2>
-                    @salt_pepper_boi
-                </div>
-            </div>
-            <div class="bottom-panel">
-                <div class="panel lower contact">
-                    <a href="files/resume_april_2017.pdf" class="resume" target="_blank">resume</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <div ng-view></div>
 
     <div class="row top">
         <ul class="buttons tabs">
             <h1 id="first-name">SAMUEL</h1>
-            <a href="#" id="info-button">info</a>
-            <a href="#" id="work-button">work</a>
-            <a href="#" id="contact-button">contact</a>
+            <a href="#" onclick="return false;" id="info-button" ng-controller="infoController">info</a>
+            <a href="#" onclick="return false;" id="work-button" ng-controller="workController">work</a>
+            <a href="#" onclick="return false;" id="contact-button" ng-controller="contactController">contact</a>
         </ul>
     </div>
 
@@ -102,11 +43,23 @@
         </ul>
     </div>
 
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/home-view/home.module.js"></script>
+    <script src="app/home-view/home.component.js"></script>
+    <script src="app/info-view/info.module.js"></script>
+    <script src="app/info-view/info.component.js"></script>
+    <script src="app/work-view/work.module.js"></script>
+    <script src="app/work-view/work.component.js"></script>
+    <script src="app/contact-view/contact.module.js"></script>
+    <script src="app/contact-view/contact.component.js"></script>
+
     <script src="scripts/jquery.js"></script>
     <script type="text/javascript" src="scripts/paper-full.min.js"></script>
-    <script src="scripts/onepage-scroll-master/jquery.onepage-scroll.min.js"></script>
     <script type="text/javascript" src="scripts/runanim.js"></script>
-    <script src="scripts/main.js"></script>
     <script>
         (function(i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;

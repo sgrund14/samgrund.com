@@ -80,6 +80,7 @@ body {
 }
 
 .top-panel {
+    position: absolute;
     width: 100%;
     height: 50%;
     display: flex;
@@ -89,7 +90,6 @@ body {
 
 .bottom-panel {
     @extend .top-panel;
-    position: absolute;
     top: 50%;
     left: 0;
     color: white;
@@ -128,28 +128,26 @@ a {
     font-size: 5em;
 }
 
+.prism:hover {
+    .P[style] {
+        color: blue !important;
+    }
+    .R[style] {
+        color: red !important;
+    }
+    .I[style] {
+        color: cyan !important;
+    }
+    .S[style] {
+        color: green !important;
+    }
+    .M[style] {
+        color: magenta !important;
+    }
+}
+
 .letter {
     transition: all .25s;
-}
-
-.p-hover[style] {
-    color: blue !important;
-}
-
-.r-hover[style] {
-    color: red !important;
-}
-
-.i-hover[style] {
-    color: cyan !important;
-}
-
-.s-hover[style] {
-    color: green !important;
-}
-
-.m-hover[style] {
-    color: magenta !important;
 }
 
 h1 {
