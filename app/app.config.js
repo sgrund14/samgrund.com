@@ -2,6 +2,8 @@ angular.module('myApp')
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
 
+        // inject the correct template into ng-view DOM element
+        // depending on the current URL
         $routeProvider
             .when('/home', {
                 template: '<home-component></home-component>'

@@ -9,23 +9,26 @@ angular.module('myApp', [
     'contactModule'
 ])
     // directive for handling menu button clicks
-    .directive('menu', ['$location', function (location) {
+    .directive('menuButton', ['$location', function (location) {
         return {
+            // retrieve the name of the button and its url for DOM manipulation
+            // and changing URLs
             scope: {
                 name: '@name',
                 url: '@url'
             },
+            // navigate to button's respective URL and alert Angular to the change
+            // use jQuery selector to 'inflate' the clicked button
             link: function ($scope) {
                 $($scope.name).on('click', function () {
                     if ($(this).hasClass("on")) {
                         $(this).removeClass('on');
-                        location.url('/home');
+                        $scope.$apply(location.url('/home'));
                     } else {
                         $('.on').removeClass('on');
                         $(this).addClass("on");
-                        location.url($scope.url);
+                        $scope.$apply(location.url($scope.url));
                     }
-                    $scope.$apply();
                 });
             }
         }
