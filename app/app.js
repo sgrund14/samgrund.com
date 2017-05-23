@@ -11,6 +11,7 @@ angular.module('myApp', [
     // directive for handling menu button clicks
     .directive('menuButton', ['$location', function (location) {
         return {
+            restrict: 'EA',
             // retrieve the name of the button and its url for DOM manipulation
             // and changing URLs
             scope: {

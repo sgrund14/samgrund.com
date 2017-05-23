@@ -5,6 +5,7 @@ angular.module('workModule', ['ngRoute'])
 // directive to intiate slider once its template is rendered.
 .directive('slider', function () {
     return {
+        restict: 'EA',
         link: function ($scope, element) {
             // Trigger when number of children changes
             var watch = $scope.$watch(function () {
@@ -47,6 +48,6 @@ angular.module('workModule', ['ngRoute'])
 
                 });
             });
-        },
+        }
     };
 });
