@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Neue+Helvetica');
 body {
-    font-family: 'Helvetica Neue';
+    font-family: 'Josefin Sans';
     font-weight: lighter;
 }
 
@@ -120,7 +119,7 @@ a {
 }
 
 .resume:hover {
-    font-weight: 300;
+    opacity: .75;
 }
 
 .prism {
